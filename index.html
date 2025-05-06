@@ -37,6 +37,28 @@
       &copy; 2025 Thomas Creator Music. All rights reserved.
     </footer>
   </div>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white text-sm p-4 flex flex-col md:flex-row items-center justify-between z-50">
+  <p class="mb-2 md:mb-0">
+    This website uses cookies to improve your experience. By continuing, you accept the use of cookies.
+  </p>
+  <button onclick="acceptCookies()" class="bg-cyan-400 text-black px-4 py-1 rounded hover:bg-cyan-300 font-semibold">
+    Accept
+  </button>
+</div>
+
+<script>
+  function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+  }
+
+  window.addEventListener('load', () => {
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  });
+</script>
 
 </body>
  
