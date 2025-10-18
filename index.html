@@ -7,27 +7,63 @@
   <link rel="icon" href="favicon.png" type="image/png">
 
   <!-- SEO base -->
-<meta name="description" content="Thomas Creator Music – Independent artist blending emotional depth, sound design and soul-driven storytelling. Discover the music.">
-<meta name="keywords" content="Thomas Creator Music, independent artist, new music 2025, Spotify, soul, powerful music, emotional songs">
-<meta name="author" content="Thomas Creator">
+  <meta name="description" content="Thomas Creator Music – Independent artist blending emotional depth, sound design and soul-driven storytelling. Discover the music.">
+  <meta name="keywords" content="Thomas Creator Music, independent artist, new music 2025, Spotify, soul, powerful music, emotional songs">
+  <meta name="author" content="Thomas Creator">
 
-<!-- Open Graph (Facebook, Instagram, WhatsApp) -->
-<meta property="og:title" content="Thomas Creator Music">
-<meta property="og:description" content="Discover the latest releases by Thomas Creator. Soulful, cinematic, impactful.">
-<meta property="og:image" content="https://thomascreatormusic.com/Cover_There_s-No-Turning-Back.png">
-<meta property="og:url" content="https://thomascreatormusic.com">
-<meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thomas Creator Music">
+  <meta property="og:description" content="Discover the latest releases by Thomas Creator. Soulful, cinematic, impactful.">
+  <meta property="og:image" content="https://thomascreatormusic.com/Cover_There_s-No-Turning-Back.png">
+  <meta property="og:url" content="https://thomascreatormusic.com">
+  <meta property="og:type" content="website">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Thomas Creator Music">
-<meta name="twitter:description" content="New music with soul and meaning. Listen now.">
-<meta name="twitter:image" content="https://thomascreatormusic.com/Cover_There_s-No-Turning-Back.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thomas Creator Music">
+  <meta name="twitter:description" content="New music with soul and meaning. Listen now.">
+  <meta name="twitter:image" content="https://thomascreatormusic.com/Cover_There_s-No-Turning-Back.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white font-sans">
-  <div class="min-h-screen flex flex-col items-center justify-center px-4">
+  <!-- HEADER con menu -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-lg md:text-xl font-semibold tracking-wide">Thomas Creator Music</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="/" class="hover:text-white/80">Home</a>
+        <a href="/media.html" class="hover:text-white/80">Media</a>
+        <a href="/music.html" class="hover:text-white/80">Musica</a>
+        <a href="/bio.html" class="hover:text-white/80">Bio</a>
+        <a href="/contatti.html" class="hover:text-white/80">Contatti</a>
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button id="mobileToggle" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2">
+        <span class="sr-only">Open menu</span>
+        <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+      <nav class="mx-auto max-w-6xl px-4 py-3 grid gap-3 text-base">
+        <a href="/" class="hover:text-white/80">Home</a>
+        <a href="/media.html" class="hover:text-white/80">Media</a>
+        <a href="/music.html" class="hover:text-white/80">Musica</a>
+        <a href="/bio.html" class="hover:text-white/80">Bio</a>
+        <a href="/contatti.html" class="hover:text-white/80">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO + contenuti esistenti -->
+  <div class="min-h-[calc(100vh-140px)] flex flex-col items-center justify-center px-4">
     <header class="text-center my-8">
       <h1 class="text-4xl md:text-6xl font-bold text-cyan-400 drop-shadow-lg">Thomas Creator Music</h1>
       <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-300">
@@ -39,58 +75,63 @@
     </header>
 
     <nav class="flex flex-wrap justify-center gap-4 mt-6">
-      <a href="https://open.spotify.com/intl-it/artist/2J8cSIVTLYnVUGDIn5WCGm" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank">Spotify</a>
-      <a href="https://music.apple.com/it/artist/thomas/1712314002" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank">Apple Music</a>
-      <a href="https://www.instagram.com/thomascreatormusic/" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/@ThomasCreatorMusic" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank">YouTube</a>
+      <a href="https://open.spotify.com/intl-it/artist/2J8cSIVTLYnVUGDIn5WCGm" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.apple.com/it/artist/thomas/1712314002" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank" rel="noopener">Apple Music</a>
+      <a href="https://www.instagram.com/thomascreatormusic/" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@ThomasCreatorMusic" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-cyan-300" target="_blank" rel="noopener">YouTube</a>
     </nav>
 
     <section class="mt-12 text-center">
       <h2 class="text-2xl font-bold text-cyan-400">Latest Release</h2>
-<div class="mt-4">
-  <a href="https://distrokid.com/hyperfollow/thomas421/theres-no-turning-back" target="_blank" rel="noopener">
-  <img src="Cover_There_s-No-Turning-Back.png" alt="There's No Turning Back - Latest Single Cover" class="mx-auto w-48 h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity duration-200">
-
-</a>
-
-  <p class="mt-4 text-gray-200 text-lg">Listen now to the new single <span class="font-bold">"There's No Turning Back"</span>.</p>
-</div>
-
+      <div class="mt-4">
+        <a href="https://distrokid.com/hyperfollow/thomas421/theres-no-turning-back" target="_blank" rel="noopener">
+          <img src="Cover_There_s-No-Turning-Back.png" alt="There's No Turning Back - Latest Single Cover" class="mx-auto w-48 h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity duration-200">
+        </a>
+        <p class="mt-4 text-gray-200 text-lg">Listen now to the new single <span class="font-bold">"There's No Turning Back"</span>.</p>
+      </div>
     </section>
-
-    <footer class="mt-12 w-full text-center text-sm text-gray-400 border-t border-gray-700 py-4">
-  &copy; 2025 Thomas Creator Music. All rights reserved.
-  <br>
-  <a href="privacy.html" class="text-cyan-400 underline hover:text-cyan-300 mt-2 inline-block">Privacy Policy</a>
-</footer>
-
   </div>
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white text-sm p-4 flex flex-col md:flex-row items-center justify-between z-50">
-  <p class="mb-2 md:mb-0">
-    This website uses cookies to improve your experience. By continuing, you accept the use of cookies.
-  </p>
-  <button onclick="acceptCookies()" class="bg-cyan-400 text-black px-4 py-1 rounded hover:bg-cyan-300 font-semibold">
-    Accept
-  </button>
-</div>
 
-<script>
-  function acceptCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    localStorage.setItem('cookiesAccepted', 'true');
-  }
+  <footer class="mt-12 w-full text-center text-sm text-gray-400 border-t border-gray-700 py-4">
+    &copy; <span id="year"></span> Thomas Creator Music. All rights reserved.
+    <br>
+    <a href="privacy.html" class="text-cyan-400 underline hover:text-cyan-300 mt-2 inline-block">Privacy Policy</a>
+  </footer>
 
-  window.addEventListener('load', () => {
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white text-sm p-4 flex flex-col md:flex-row items-center justify-between z-50">
+    <p class="mb-2 md:mb-0">
+      This website uses cookies to improve your experience. By continuing, you accept the use of cookies.
+    </p>
+    <button onclick="acceptCookies()" class="bg-cyan-400 text-black px-4 py-1 rounded hover:bg-cyan-300 font-semibold">
+      Accept
+    </button>
+  </div>
+
+  <script>
+    // Mobile menu
+    const t = document.getElementById('mobileToggle');
+    const m = document.getElementById('mobileMenu');
+    if (t && m) t.addEventListener('click', () => m.classList.toggle('hidden'));
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Cookie banner
+    function acceptCookies() {
       document.getElementById('cookie-banner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
     }
-  });
-</script>
-
+    window.addEventListener('load', () => {
+      if (localStorage.getItem('cookiesAccepted') === 'true') {
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+    });
+    window.acceptCookies = acceptCookies; // expose for inline onclick
+  </script>
 </body>
- 
 </html>
+
 
 
 
