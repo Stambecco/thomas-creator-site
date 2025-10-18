@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Media – Thomas Creator Music</title>
+  <meta name="description" content="Foto e video ufficiali dei brani di Thomas Creator Music.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Social (opzionale) -->
+  <meta property="og:title" content="Media – Thomas Creator Music">
+  <meta property="og:description" content="Foto e video ufficiali dei brani di Thomas Creator Music.">
+  <meta property="og:image" content="https://thomascreatormusic.com/Cover_There_s-No-Turning-Back.png">
+  <meta property="og:type" content="website">
+</head>
+<body class="bg-black text-white">
+  <!-- HEADER (coerente con index) -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-lg md:text-xl font-semibold tracking-wide">Thomas Creator Music</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="/" class="hover:text-white/80">Home</a>
+        <a href="/media.html" class="hover:text-white/80 font-semibold">Media</a>
+        <a href="/music.html" class="hover:text-white/80">Musica</a>
+        <a href="/bio.html" class="hover:text-white/80">Bio</a>
+        <a href="/contatti.html" class="hover:text-white/80">Contatti</a>
+      </nav>
+
+      <button id="mobileToggle" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2">
+        <span class="sr-only">Apri menu</span>
+        <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+      <nav class="mx-auto max-w-6xl px-4 py-3 grid gap-3 text-base">
+        <a href="/" class="hover:text-white/80">Home</a>
+        <a href="/media.html" class="hover:text-white/80">Media</a>
+        <a href="/music.html" class="hover:text-white/80">Musica</a>
+        <a href="/bio.html" class="hover:text-white/80">Bio</a>
+        <a href="/contatti.html" class="hover:text-white/80">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-6xl px-4 pt-10 pb-6">
+    <h1 class="text-3xl md:text-4xl font-semibold text-cyan-400">Media</h1>
+    <p class="mt-2 text-gray-300">Foto e video ufficiali dei brani eseguiti finora.</p>
+  </section>
+
+  <!-- FILTRI -->
+  <section class="mx-auto max-w-6xl px-4 pb-4">
+    <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+      <div class="text-sm text-gray-300">Filtra per brano</div>
+      <div class="flex items-center gap-3">
+        <select id="songFilter" class="bg-neutral-900 border border-white/10 rounded-lg px-3 py-2 text-sm">
+          <option value="all">Tutti i brani</option>
+          <option value="There's No Turning Back">There's No Turning Back</option>
+          <option value="Believe Me">Believe Me</option>
+          <option value="The Wrong War">The Wrong War</option>
+          <option value="Gravity Lies">Gravity Lies</option>
+          <option value="Sun and See">Sun and See</option>
+          <option value="After the Storm">After the Storm</option>
+          <option value="A Life to Live">A Life to Live</option>
+          <option value="Waves and Roads">Waves and Roads</option>
+          <option value="My Light">My Light</option>
+        </select>
+        <button id="clearFilter" class="text-sm px-3 py-2 rounded-lg border border-white/10 hover:bg-white/5">
+          Pulisci filtro
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID MEDIA -->
+  <main class="mx-auto max-w-6xl px-4 pb-20">
+    <div id="mediaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- FOTO – esempio -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="There's No Turning Back" data-type="photo">
+        <button class="block relative w-full" data-lightbox-image="/media/tntb/live-01.jpg" aria-label="Apri immagine">
+          <img src="/media/tntb/live-01.jpg" alt="There's No Turning Back - Live 01" class="w-full h-60 object-cover" loading="lazy">
+          <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
+        </button>
+        <div class="p-4">
+          <h3 class="font-medium">There's No Turning Back</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- VIDEO YouTube – esempio -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Believe Me" data-type="video">
+        <div class="relative w-full aspect-video">
+          <iframe
+            class="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Believe Me - Official Visual"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="p-4">
+          <h3 class="font-medium">Believe Me</h3>
+          <p class="text-sm text-gray-300">Official Visual</p>
+        </div>
+      </article>
+
+      <!-- VIDEO MP4 locale – esempio -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Gravity Lies" data-type="video">
+        <video controls class="w-full h-auto" preload="metadata" poster="/media/gravity-lies/poster.jpg">
+          <source src="/media/gravity-lies/live-cut-01.mp4" type="video/mp4">
+          Il tuo browser non supporta i video HTML5.
+        </video>
+        <div class="p-4">
+          <h3 class="font-medium">Gravity Lies</h3>
+          <p class="text-sm text-gray-300">Live Cut 01</p>
+        </div>
+      </article>
+
+      <!-- DUPLICA questi blocchi per aggiungere altri contenuti -->
+    </div>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 hidden items-center justify-center p-4 bg-black/80">
+    <button id="lightboxClose" class="absolute top-4 right-4 rounded-xl border border-white/10 px-3 py-2">
+      Chiudi
+    </button>
+    <img id="lightboxImg" src="" alt="" class="max-h-[90vh] max-w-[90vw] rounded-2xl border border-white/10 shadow-2xl" />
+  </div>
+
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-400">
+      © <span id="year"></span> Thomas Creator Music — Tutti i diritti riservati
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const t = document.getElementById('mobileToggle');
+    const m = document.getElementById('mobileMenu');
+    if (t && m) t.addEventListener('click', () => m.classList.toggle('hidden'));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filtri
+    const filter = document.getElementById('songFilter');
+    const clear = document.getElementById('clearFilter');
+    const cards = Array.from(document.querySelectorAll('.media-card'));
+
+    function applyFilter(val) {
+      cards.forEach(c => {
+        const match = val === 'all' || c.dataset.song === val;
+        c.classList.toggle('hidden', !match);
+      });
+    }
+    filter.addEventListener('change', e => applyFilter(e.target.value));
+    clear.addEventListener('click', () => {
+      filter.value = 'all';
+      applyFilter('all');
+    });
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbClose = document.getElementById('lightboxClose');
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-lightbox-image]');
+      if (!btn) return;
+      const src = btn.getAttribute('data-lightbox-image');
+      lbImg.src = src;
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeLb() {
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lb.classList.contains('hidden')) closeLb(); });
+  </script>
+</body>
+</html>
