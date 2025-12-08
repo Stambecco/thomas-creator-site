@@ -454,9 +454,8 @@
       lb.classList.remove('hidden');
       lb.classList.add('flex');
       document.body.style.overflow = 'hidden';
-      const galleryUrl = new URL('/media-gallery.html', window.location.origin);
-      galleryUrl.searchParams.set('song', song);
-      link.href = `${galleryUrl.pathname}${galleryUrl.search}`;
+      const encodedSong = encodeURIComponent(song);
+      link.href = `media-gallery.html?song=${encodedSong}`;
       link.setAttribute('aria-label', `Apri la galleria di immagini di "${song}"`);
     });
     function closeLb() {
@@ -471,4 +470,3 @@
   </script>
 </body>
 </html>
-
