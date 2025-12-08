@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galleria brani – Thomas Creator Music</title>
+  <meta name="description" content="Galleria di immagini usate per i video dei brani di Thomas Creator Music.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-lg md:text-xl font-semibold tracking-wide">Thomas Creator Music</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="/" class="hover:text-white/80">Home</a>
+        <a href="/media.html" class="hover:text-white/80 font-semibold">Media</a>
+        <a href="/music.html" class="hover:text-white/80">Music</a>
+        <a href="/bio.html" class="hover:text-white/80">Bio</a>
+        <a href="/contacts.html" class="hover:text-white/80">Contacts</a>
+      </nav>
+
+      <button id="mobileToggle" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2">
+        <span class="sr-only">Apri menu</span>
+        <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+      <nav class="mx-auto max-w-6xl px-4 py-3 grid gap-3 text-base">
+        <a href="/" class="hover:text-white/80">Home</a>
+        <a href="/media.html" class="hover:text-white/80">Media</a>
+        <a href="/music.html" class="hover:text-white/80">Music</a>
+        <a href="/bio.html" class="hover:text-white/80">Bio</a>
+        <a href="/contacts.html" class="hover:text-white/80">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 pb-16">
+    <section class="pt-10 pb-6 space-y-2">
+      <a href="/media.html" class="text-sm text-gray-400 hover:text-white/80">← Torna a Media</a>
+      <h1 id="songTitle" class="text-3xl md:text-4xl font-semibold text-cyan-400">Galleria</h1>
+      <p class="text-gray-300">Tutte le immagini usate per creare il video del brano selezionato.</p>
+    </section>
+
+    <section class="space-y-6">
+      <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      <div id="galleryEmpty" class="hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-gray-200">
+        <h2 class="text-xl font-semibold text-white">Nessuna immagine caricata</h2>
+        <p class="mt-2 text-sm text-gray-300">Aggiungi i frame o le foto del brano nella cartella media corrispondente e aggiorna questa pagina per mostrarli qui.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-400">
+      © <span id="year"></span> Thomas Creator Music — All rights reserved
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const t = document.getElementById('mobileToggle');
+    const m = document.getElementById('mobileMenu');
+    if (t && m) t.addEventListener('click', () => m.classList.toggle('hidden'));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const params = new URLSearchParams(window.location.search);
+    const songName = params.get('song');
+
+    const songTitle = document.getElementById('songTitle');
+    songTitle.textContent = songName ? `Galleria – ${songName}` : 'Galleria';
+
+    const galleries = {
+      "There's No Turning Back": ["/media/There's No Turning Back/live-01.jpg"],
+      "Believe Me": ["/media/believe-me/live-01.jpg"],
+      "My Light": ["/media/my-light/live-01.jpg"],
+      "Sun and See": ["/media/sun-and-sea/live-01.jpg"],
+      "After the Storm": ["/media/After the Storm/live-01.jpg"],
+      "The Wrong War": ["/media/the-wrong-war/live-01.jpg"],
+      "A Life to Live": ["/media/a-life-to-live/live-01.jpg"],
+      "Waves and Roads": ["/media/Waves and Roads/live-01.jpg"],
+      "Great Little Woman": ["/media/great-little-woman/live-01.png"],
+      "Never Enough": ["/media/never-enough/live-01.jpg"],
+      "Gravity Lies": ["/media/never-enough/live-01.png"],
+      "Sensation of Being": ["/media/Sensation of Being/live-01.jpg"],
+      "Heavy Heart": ["/media/Heavy Heart/live-01.jpg"],
+      "Lost in Time": ["/media/Lost in Time/live-01.jpg"],
+      "My Promise": ["/media/My Promise/live-01.jpg"],
+      "Face The Darkness": ["/media/Face The Darkness/live-01.jpg"],
+      "Runner": ["/media/Runner/live-01.png"],
+      "The song of the Soul": ["/media/The song of the Soul/live-01.jpg"],
+      "Sinners Prayer": ["/media/Sinners Prayer/live-01.jpg"],
+      "No Good for Me": ["/media/No Good for Me/live-01.jpg"],
+      "Respect The Fire": ["/media/Respect The Fire/live-01.jpg"]
+    };
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    const emptyState = document.getElementById('galleryEmpty');
+
+    const images = songName ? galleries[songName] : null;
+
+    if (images && images.length) {
+      images.forEach((src, index) => {
+        const article = document.createElement('article');
+        article.className = 'group border border-white/10 rounded-2xl overflow-hidden bg-white/5';
+
+        const figure = document.createElement('figure');
+        figure.className = 'relative';
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `${songName} – Frame ${index + 1}`;
+        img.loading = 'lazy';
+        img.className = 'w-full h-72 object-cover';
+
+        const caption = document.createElement('figcaption');
+        caption.className = 'p-4 text-sm text-gray-200 flex items-center justify-between';
+        caption.innerHTML = `<span>Frame ${index + 1}</span><span class="text-gray-400">${songName}</span>`;
+
+        figure.appendChild(img);
+        article.appendChild(figure);
+        article.appendChild(caption);
+        galleryGrid.appendChild(article);
+      });
+    } else {
+      emptyState.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+
