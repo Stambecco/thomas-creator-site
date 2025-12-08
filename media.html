@@ -8,14 +8,16 @@
   <link rel="icon" href="favicon.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Social (opzionale) -->
+  <!-- Social -->
   <meta property="og:title" content="Media – Thomas Creator Music">
   <meta property="og:description" content="Official photos and videos of Thomas Creator Music's songs.">
   <meta property="og:image" content="https://thomascreatormusic.com/assets/covers/There_s_No_Turning_Back.png">
   <meta property="og:type" content="website">
 </head>
+
 <body class="bg-black text-white">
-  <!-- HEADER (coerente con index) -->
+
+  <!-- HEADER -->
   <header class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2">
@@ -32,13 +34,16 @@
 
       <button id="mobileToggle" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2">
         <span class="sr-only">Apri menu</span>
-        <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
       </button>
     </div>
+
     <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
       <nav class="mx-auto max-w-6xl px-4 py-3 grid gap-3 text-base">
         <a href="/" class="hover:text-white/80">Home</a>
-        <a href="/media.html" class="hover:text-white/80">Media</a>
+        <a href="/media.html" class="hover:text-white/80 font-semibold">Media</a>
         <a href="/music.html" class="hover:text-white/80">Music</a>
         <a href="/bio.html" class="hover:text-white/80">Bio</a>
         <a href="/contacts.html" class="hover:text-white/80">Contacts</a>
@@ -52,7 +57,7 @@
     <p class="mt-2 text-gray-300">Official photos and videos of the songs performed so far.</p>
   </section>
 
-  <!-- FILTRI -->
+  <!-- FILTERS -->
   <section class="mx-auto max-w-6xl px-4 pb-4">
     <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
       <div class="text-sm text-gray-300">Filter by song</div>
@@ -78,8 +83,8 @@
           <option value="Sinners Prayer">Sinners Prayer</option>
           <option value="No Good For Me">No Good For Me</option>
           <option value="Respect The Fire">Respect The Fire</option>
-          
         </select>
+
         <button id="clearFilter" class="text-sm px-3 py-2 rounded-lg border border-white/10 hover:bg-white/5">
           Clean filter
         </button>
@@ -87,299 +92,247 @@
     </div>
   </section>
 
-  <!-- GRID MEDIA -->
+  <!-- GRID -->
   <main class="mx-auto max-w-6xl px-4 pb-20">
     <div id="mediaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-      <!-- FOTO – esempio -->
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="There's No Turning Back" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/There's No Turning Back/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/There_s_No_Turning_Back.png" alt="There's No Turning Back - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">There's No Turning Back</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Believe Me" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/believe-me/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Believe_Me_Album_Cover.jpg" alt="Believe Me - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Believe Me</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
       
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="My Light" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/my-light/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_My_Light.png" alt="My Light - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">My Light</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Sun and See" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/sun-and-sea/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_Sun_and_Sea.png" alt="Sun and See - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Sun and See</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="After the Storm" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/After the Storm/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/After_the_Storm_Cover.jpg" alt="After the Storm - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">After the Storm</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="The Wrong War" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/the-wrong-war/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_The_Wrong_War.png" alt="The Wrong War - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">The Wrong War</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="A Life to Live" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/a-life-to-live/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_A_Life_to_Live.png" alt="A Life to Live - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">A Life to Live</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Waves and Roads" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Waves and Roads/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_Waves_and_Roads.jpg" alt="Waves and Roads - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Waves and Roads</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Great Little Woman" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/great-little-woman/live-01.png" aria-label="Apri immagine">
-    <img src="/assets/covers/Great_Little_Woman_Cover.png" alt="Great Little Woman - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Great Little Woman</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Never Enough" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/never-enough/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Never_enough_Cover.jpg" alt="Never Enough - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Never Enough</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-       <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Gravity Lies" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/never-enough/live-01.png" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_Gravity_Lies.png" alt="Gravity Lies - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Gravity Lies</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-        <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Sensation of Being" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Sensation of Being/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Album_cover titled _Sensation of Being.jpg" alt="Sensation of Being - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Sensation of Being</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-       <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Heavy Heart" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Heavy Heart/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Heavy_Heart_Album_Cover_New.jpg" alt="Heavy Heart - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Heavy Heart</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Lost in Time" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Lost in Time/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_Lost_in_Time.jpg" alt="Lost in Time - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Lost in Time</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="My Promise" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/My Promise/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_My_Promise.jpg" alt="My Promise - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">My Promise</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Face The Darkness" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Face The Darkness/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_Face_The_Darkness.jpg" alt="Face The Darkness - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Face The Darkness</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Runner" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Runner/live-01.png" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_Single _Runner.png" alt="Runner - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Runner</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="The song of the Soul" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/The song of the Soul/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_The_Song_of_The_Soul.jpg" alt="The song of the Soul - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">The song of the Soul</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Sinners Prayer" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Sinners Prayer/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Cover_Sinners_Prayer.jpg" alt="Sinners Prayer - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Sinners Prayer</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-       <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="No Good for Me" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/No Good for Me/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/No_Good_for_Me_Album_Cover.jpg" alt="No Good for Me - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">No Good for Me</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
-       <article class="media-card group border border-white/10 rounded-2xl overflow-hidden"
-         data-song="Respect The Fire" data-type="photo">
-  <button class="block relative w-full"
-          data-lightbox-image="/media/Respect The Fire/live-01.jpg" aria-label="Apri immagine">
-    <img src="/assets/covers/Respect_the_Fire_Album_Cover.jpg" alt="Respect The Fire - Live 01"
-         class="w-full h-80 object-cover" loading="lazy">
-    <span class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></span>
-  </button>
-  <div class="p-4">
-    <h3 class="font-medium">Respect The Fire</h3>
-    <p class="text-sm text-gray-300">Live Session – Frame 01</p>
-  </div>
-</article>
+      <!-- FROM NOW ON ALL CARDS ARE LINKS TO GALLERY -->
       
+      <!-- There's No Turning Back -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="There's No Turning Back">
+        <a href="/media-gallery.html?track=theres_no_turning_back" class="block relative w-full">
+          <img src="/assets/covers/There_s_No_Turning_Back.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">There's No Turning Back</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
 
-      <!-- DUPLICA questi blocchi per aggiungere altri contenuti -->
+      <!-- Believe Me -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Believe Me">
+        <a href="/media-gallery.html?track=believe_me" class="block relative w-full">
+          <img src="/assets/covers/Believe_Me_Album_Cover.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Believe Me</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- My Light -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="My Light">
+        <a href="/media-gallery.html?track=my_light" class="block relative w-full">
+          <img src="/assets/covers/Cover_My_Light.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">My Light</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Sun and See -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Sun and See">
+        <a href="/media-gallery.html?track=sun_and_see" class="block relative w-full">
+          <img src="/assets/covers/Cover_Sun_and_Sea.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Sun and See</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- After the Storm -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="After the Storm">
+        <a href="/media-gallery.html?track=after_the_storm" class="block relative w-full">
+          <img src="/assets/covers/After_the_Storm_Cover.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">After the Storm</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- The Wrong War -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="The Wrong War">
+        <a href="/media-gallery.html?track=the_wrong_war" class="block relative w-full">
+          <img src="/assets/covers/Cover_The_Wrong_War.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">The Wrong War</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- A Life to Live -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="A Life to Live">
+        <a href="/media-gallery.html?track=a_life_to_live" class="block relative w-full">
+          <img src="/assets/covers/Cover_A_Life_to_Live.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">A Life to Live</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Waves and Roads -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Waves and Roads">
+        <a href="/media-gallery.html?track=waves_and_roads" class="block relative w-full">
+          <img src="/assets/covers/Cover_Waves_and_Roads.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Waves and Roads</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Great Little Woman -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Great Little Woman">
+        <a href="/media-gallery.html?track=great_little_woman" class="block relative w-full">
+          <img src="/assets/covers/Great_Little_Woman_Cover.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Great Little Woman</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Never Enough -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Never Enough">
+        <a href="/media-gallery.html?track=never_enough" class="block relative w-full">
+          <img src="/assets/covers/Never_enough_Cover.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Never Enough</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Gravity Lies -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Gravity Lies">
+        <a href="/media-gallery.html?track=gravity_lies" class="block relative w-full">
+          <img src="/assets/covers/Cover_Gravity_Lies.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Gravity Lies</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Sensation of Being -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Sensation of Being">
+        <a href="/media-gallery.html?track=sensation_of_being" class="block relative w-full">
+          <img src="/assets/covers/Album_cover titled _Sensation of Being.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Sensation of Being</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Heavy Heart -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Heavy Heart">
+        <a href="/media-gallery.html?track=heavy_heart" class="block relative w-full">
+          <img src="/assets/covers/Heavy_Heart_Album_Cover_New.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Heavy Heart</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Lost in Time -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Lost in Time">
+        <a href="/media-gallery.html?track=lost_in_time" class="block relative w-full">
+          <img src="/assets/covers/Cover_Lost_in_Time.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Lost in Time</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- My Promise -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="My Promise">
+        <a href="/media-gallery.html?track=my_promise" class="block relative w-full">
+          <img src="/assets/covers/Cover_My_Promise.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">My Promise</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Face The Darkness -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Face The Darkness">
+        <a href="/media-gallery.html?track=face_the_darkness" class="block relative w-full">
+          <img src="/assets/covers/Cover_Face_The_Darkness.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Face The Darkness</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Runner -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Runner">
+        <a href="/media-gallery.html?track=runner" class="block relative w-full">
+          <img src="/assets/covers/Cover_Single _Runner.png" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Runner</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- The Song of the Soul -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="The Song of the Soul">
+        <a href="/media-gallery.html?track=the_song_of_the_soul" class="block relative w-full">
+          <img src="/assets/covers/Cover_The_Song_of_The_Soul.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">The song of the Soul</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Sinners Prayer -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Sinners Prayer">
+        <a href="/media-gallery.html?track=sinners_prayer" class="block relative w-full">
+          <img src="/assets/covers/Cover_Sinners_Prayer.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Sinners Prayer</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- No Good for Me -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="No Good for Me">
+        <a href="/media-gallery.html?track=no_good_for_me" class="block relative w-full">
+          <img src="/assets/covers/No_Good_for_Me_Album_Cover.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">No Good for Me</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
+      <!-- Respect The Fire -->
+      <article class="media-card group border border-white/10 rounded-2xl overflow-hidden" data-song="Respect The Fire">
+        <a href="/media-gallery.html?track=respect_the_fire" class="block relative w-full">
+          <img src="/assets/covers/Respect_the_Fire_Album_Cover.jpg" class="w-full h-80 object-cover" loading="lazy">
+        </a>
+        <div class="p-4">
+          <h3 class="font-medium">Respect The Fire</h3>
+          <p class="text-sm text-gray-300">Live Session – Frame 01</p>
+        </div>
+      </article>
+
     </div>
   </main>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="fixed inset-0 hidden items-center justify-center p-4 bg-black/80">
-    <button id="lightboxClose" class="absolute top-4 right-4 rounded-xl border border-white/10 px-3 py-2">
-      Chiudi
-    </button>
-    <img id="lightboxImg" src="" alt="" class="max-h-[90vh] max-w-[90vw] rounded-2xl border border-white/10 shadow-2xl" />
-  </div>
-
+  <!-- FOOTER -->
   <footer class="border-t border-white/10">
     <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-400">
       © <span id="year"></span> Thomas Creator Music — All rights reserved
@@ -392,10 +345,9 @@
     const m = document.getElementById('mobileMenu');
     if (t && m) t.addEventListener('click', () => m.classList.toggle('hidden'));
 
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Filtri
+    // Filters
     const filter = document.getElementById('songFilter');
     const clear = document.getElementById('clearFilter');
     const cards = Array.from(document.querySelectorAll('.media-card'));
@@ -406,36 +358,14 @@
         c.classList.toggle('hidden', !match);
       });
     }
+
     filter.addEventListener('change', e => applyFilter(e.target.value));
     clear.addEventListener('click', () => {
       filter.value = 'all';
       applyFilter('all');
     });
-
-    // Lightbox
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
-    const lbClose = document.getElementById('lightboxClose');
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-lightbox-image]');
-      if (!btn) return;
-      const src = btn.getAttribute('data-lightbox-image');
-      lbImg.src = src;
-      lb.classList.remove('hidden');
-      lb.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    });
-    function closeLb() {
-      lb.classList.add('hidden');
-      lb.classList.remove('flex');
-      lbImg.src = '';
-      document.body.style.overflow = '';
-    }
-    lbClose.addEventListener('click', closeLb);
-    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lb.classList.contains('hidden')) closeLb(); });
   </script>
+
 </body>
 </html>
 
