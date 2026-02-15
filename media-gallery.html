@@ -51,15 +51,15 @@
     <section class="pt-10 pb-6 space-y-2">
       <a href="/media.html" class="text-sm text-gray-400 hover:text-white/80">← Back to Media</a>
       <h1 id="songTitle" class="text-3xl md:text-4xl font-semibold text-cyan-400">Gallery</h1>
-      <p class="text-gray-300">All images used to create the video of the selected song.</p>
+      <p class="text-gray-300">All images and videos used to create the media of the selected song.</p>
     </section>
 
     <section class="space-y-6">
       <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
       <div id="galleryEmpty" class="hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-gray-200">
-        <h2 class="text-xl font-semibold text-white">Nessuna immagine caricata</h2>
-        <p class="mt-2 text-sm text-gray-300">Aggiungi i frame del brano nella cartella corrispondente e aggiorna la pagina.</p>
+      <h2 class="text-xl font-semibold text-white">Nessun contenuto caricato</h2>  
+      <p class="mt-2 text-sm text-gray-300">Aggiungi immagini o video del brano nella cartella corrispondente e aggiorna la pagina.</p>  
       </div>
     </section>
 
@@ -161,7 +161,17 @@
       },
       "waves_and_roads": {
         title: "Waves and Roads",
-        video: ["/media/Waves and Roads(1).mp4"]
+         media: ["/Media/Waves and Roads(1).mp4",
+                 "/Media/Waves and Roads(2).mp4",
+                 "/Media/Waves and Roads(3).mp4",
+                 "/Media/Waves and Roads(4).mp4",
+                 "/Media/Waves and Roads(5).mp4",
+                 "/Media/Waves and Roads(6).mp4",
+                 "/Media/Waves and Roads(7).mp4",
+                 "/Media/Waves and Roads(8).mp4",
+                 "/Media/Waves and Roads(9).mp4",
+                "/Media/Waves and Roads(10).mp4",
+                "/Media/Waves and Roads(11).mp4"]
       },
       "great_little_woman": {
         title: "Great Little Woman",
@@ -220,31 +230,41 @@
         images: ["/media/Rancor/live-01.jpg"]
       }
     };
-
-    // Load gallery
-    const song = galleries[track];
-
-    if (song) {
+     // Load gallery
+       const song = galleries[track];
+     if (song) {
       songTitle.textContent = `Galleria – ${song.title}`;
 
-      song.images.forEach((src, index) => {
+        const mediaItems = song.media || song.images || song.videos || song.video || []; 
+        mediaItems.forEach((src, index) => {
+        const isVideo = /\.(mp4|webm|ogg)$/i.test(src);
         const article = document.createElement('article');
         article.className = 'group border border-white/10 rounded-2xl overflow-hidden bg-white/5';
 
         const figure = document.createElement('figure');
         figure.className = 'relative';
 
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = `${song.title} – Frame ${index + 1}`;
-        img.loading = 'lazy';
-        img.className = 'w-full h-85 object-cover';
+        if (isVideo) {
+          const video = document.createElement('video');
+          video.src = src;
+          video.className = 'w-full h-85 object-cover bg-black';
+          video.controls = true;
+          video.preload = 'metadata';
+          figure.appendChild(video);
+        } else {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = `${song.title} – Frame ${index + 1}`;
+          img.loading = 'lazy';
+          img.className = 'w-full h-85 object-cover';
+          figure.appendChild(img);
+        }
 
         const caption = document.createElement('figcaption');
         caption.className = 'p-4 text-sm text-gray-200 flex items-center justify-between';
-        caption.innerHTML = `<span>Frame ${index + 1}</span><span class="text-gray-400">${song.title}</span>`;
+        caption.innerHTML = `<span>${isVideo ? 'Video' : 'Frame'} ${index + 1}</span><span class="text-gray-400">${song.title}</span>`;
 
-        figure.appendChild(img);
+        
         article.appendChild(figure);
         article.appendChild(caption);
         galleryGrid.appendChild(article);
